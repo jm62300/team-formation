@@ -6,7 +6,7 @@
 mkdir -p $2
 name=$(basename $1)
 
-for f in $(find $1 -name "*.txt")
+for f in $(find $1 -name "*.t*")
 do
     ./generateCnfs.sh $f $2/$name
 done

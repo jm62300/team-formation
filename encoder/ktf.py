@@ -60,7 +60,7 @@ def solvekTF(nbAgents, nbSkills, mapOfAgents, mapOfSkills, eclauses, k, bound):
     agents = [agentsProp[mapOfAgents[a].id] for a in mapOfAgents]
     weights = [mapOfAgents[a].w1 for a in mapOfAgents]
 
-    cnf = pb.PBEnc.leq(lits=agents, weights=weights, bound=bound, top_id = nbVar, encoding=pb.EncType.bdd)
+    cnf = pb.PBEnc.leq(lits=agents, weights=weights, bound=bound, top_id = nbVar, encoding=pb.EncType.best)
     nbVar = cnf.nv
     clauses += cnf.clauses
 

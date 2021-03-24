@@ -52,7 +52,7 @@ def solveTF(nbAgents, nbSkills, mapOfAgents, mapOfSkills, eclauses, bound):
     agents = [agentsProp[mapOfAgents[a].id] for a in mapOfAgents]
     weights = [mapOfAgents[a].w1 for a in mapOfAgents]
 
-    cnf = PBEnc.leq(lits=agents, weights=weights, bound=bound, encoding=EncType.bdd)
+    cnf = PBEnc.leq(lits=agents, weights=weights, bound=bound, encoding=EncType.best)
     clauses += cnf.clauses
     nbVar = cnf.nv
 

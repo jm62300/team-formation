@@ -9,11 +9,11 @@ echo "Repository where are stored the CNF output: $2"
 mkdir -p $2
 
 PATH_ENCODE="../encoder/"
-sumWeight=$(grep "^a" $1 | awk '{sum+=$2 ;} END{print sum}')
+sumWeight=$(grep "^a" $1 | awk '{sum+=$3 ;} END{print sum}')
 
 name=$(basename $1 .txt)
 
-for p in 0.1 0.25 0.50 0.75 0.90
+for p in 0.01 0.03 0.05
 do
     upperBound=$(echo "$sumWeight * $p" | bc | perl -nl -MPOSIX -e 'print ceil($_);')
     echo "tf generation for $upperBound as upper bound"
