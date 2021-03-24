@@ -52,14 +52,12 @@ def solveTF(nbAgents, nbSkills, mapOfAgents, mapOfSkills, eclauses, bound):
     agents = [agentsProp[mapOfAgents[a].id] for a in mapOfAgents]
     weights = [mapOfAgents[a].w1 for a in mapOfAgents]
 
-    print(agents)
-    print(weights)
-
     cnf = PBEnc.leq(lits=agents, weights=weights, bound=bound, encoding=EncType.bdd)
     clauses += cnf.clauses
+    nbVar = cnf.nv
 
     # print out following the Dimacs format.
-    print("p cnf", nbAgents, len(clauses))
+    print("p cnf", nbVar, len(clauses))
     for cl in clauses:
         for l in cl:
             print(l, end=" ")

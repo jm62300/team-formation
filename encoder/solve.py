@@ -45,7 +45,7 @@ for o in sys.argv[2:]:
 print("c Options:")
 print("c Method we run:", m)
 print("c The number of agents we can loose:", k)
-print("c The bound:", b)
+print("c The upper bound for the objective function:", b)
 
 print("c input file:", fileName)
 nbAgents, nbSkills, mapOfAgents, mapOfSkills, eclauses = parse(fileName)
@@ -60,4 +60,4 @@ agentsProp, skillsProp = [], []
 if(m == "tf"):
     solveTF(nbAgents, nbSkills, mapOfAgents, mapOfSkills, eclauses, b)
 elif(m == "ktf"):
-    solvekTF(nbAgents, nbSkills, mapOfAgents, mapOfSkills, eclauses, k)
+    solvekTF(nbAgents, nbSkills, mapOfAgents, mapOfSkills, eclauses, k, b)
