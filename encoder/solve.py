@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Copyright (C) 2021  Lagniez
 #
 # This program is free software: you can redistribute it and/or modify
@@ -13,7 +14,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#!/usr/bin/python3
 from agent import *
 from parser import *
 
@@ -22,10 +22,6 @@ from ktf import *
 
 import sys
 import os
-import time
-from math import ceil
-
-start_time = time.time()
 
 def help():
     print("USAGE: ./solve.py FILE [-tf] [-ktf] [-k=1] [-b=1]")
