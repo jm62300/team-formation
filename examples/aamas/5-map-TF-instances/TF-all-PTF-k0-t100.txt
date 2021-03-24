@@ -1,0 +1,7 @@
+type PTF
+parameters 0 100
+solved_instances 100 / 100 (time out: 600 seconds)
+avg_deployment_cost_of_solved_instances 21.45
+avg_percentage_covered_worst_case 100.00
+avg_repair_cost_of_solved_instances 0.00
+avg_time_of_solved_instances 0.88
