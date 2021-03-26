@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: teamFormation.aux
+The style file: IEEEtrans.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: teamFormation.bib
+-- IEEEtranS.bst version 1.12 (2007/01/11) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** Sorting version - not for normal IEEE work.
+Warning--empty year in DBLP:conf/atal/GeorgePSS10
+
+Done.
+You've used 12 entries,
+            4483 wiz_defined-function locations,
+            973 strings with 11399 characters,
+and the built_in function-call counts, 12259 in all, are:
+= -- 1026
+> -- 397
+< -- 85
++ -- 200
+- -- 93
+* -- 641
+:= -- 1774
+add.period$ -- 27
+call.type$ -- 12
+change.case$ -- 82
+chr.to.int$ -- 216
+cite$ -- 13
+duplicate$ -- 756
+empty$ -- 943
+format.name$ -- 108
+if$ -- 2771
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 137
+newline$ -- 61
+num.names$ -- 34
+pop$ -- 384
+preamble$ -- 1
+purify$ -- 61
+quote$ -- 2
+skip$ -- 890
+stack$ -- 0
+substring$ -- 577
+swap$ -- 593
+text.length$ -- 13
+text.prefix$ -- 0
+top$ -- 6
+type$ -- 126
+warning$ -- 1
+while$ -- 65
+width$ -- 14
+write$ -- 138
+(There was 1 warning)
