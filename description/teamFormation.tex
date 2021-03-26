@@ -41,13 +41,21 @@ lagniez@cril.fr
 \maketitle
 
 \begin{abstract}
-This document is a model and instructions for \LaTeX.
-This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-or Math in Paper Title or Abstract.
+Team formation (TF) is the problem of deploying the least expensive team of agents 
+while covering a set of skills. 
+Robust team formation (RobTF), a generalization of the above problem,
+takes into account the dynamic nature of the environment, e.g. after 
+a team has been formed, agents may unexpectedly become unavailable
+due to failure or illness. 
+A team is said to be $k$-robust if the team remains efficient even after $k$ agents are removed from it.
+Robustness is clearly a desirable property as it allows the underlying system to remain 
+functional after an unfortunate change happens.
+Interestingly, the decision problems for TF and RobTF are both NP-complete, making them
+possible target for SAT solvers.
 \end{abstract}
 
 \begin{IEEEkeywords}
-component, formatting, style, styling, insert
+team formation, SAT encoding.
 \end{IEEEkeywords}
 
 \section{Introduction}
