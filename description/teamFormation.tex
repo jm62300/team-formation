@@ -272,6 +272,20 @@ that has been encoded into SAT using the encoding type \textit{best} provided by
 
 \section{Benchmarks}
 
+We submitted X benchmarks to the 2021 SAT Competition.
+The benchmarks follow the following naming convention:
+\begin{itemize}
+\item Efficient team: $tf\_\langle bench.tf \rangle \_\langle ratio \rangle\_\langle bound \rangle$, 
+where $bench.tf$ is the team formation input that has been used to generate the CNF formula,
+$ratio$ is a ratio of the maximum cost we can deployed, and $bound$ is given bound 
+($bound = ratio \times \sum_{i \in A} f(i)$);
+\item $k$ robust team: $ktf\_\langle bench.tf \rangle \_\langle k \rangle\_\langle ratio \rangle\_\langle bound \rangle$, where $bench.tf$ is the team formation input that has been used to generate the CNF formula,
+$k$ is the maximul number of agents we can lose,
+$ratio$ is a ratio of the maximum cost we can deployed, and $bound$ is given bound 
+($bound = ratio \times \sum_{i \in A} f(i)$);
+\end{itemize}
+
+
 
 
 
