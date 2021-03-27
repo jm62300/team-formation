@@ -27,12 +27,28 @@
 
 \title{SAT Encoding for the Team Formation Problem}
 \author{
+\IEEEauthorblockN{Nicolas Schwind}
+\IEEEauthorblockA{
+	\textit{National Institute of Advanced}\\ 
+	\textit{Industrial Science and Technology} \\
+	Tokyo, Japan\\
+	nicolas-schwind@aist.go.jp
+}
+\and
+\IEEEauthorblockN{Emir Demirovi\'c}
+\IEEEauthorblockA{
+	\textit{Delft University of Technology}\\ 
+	Delft, The Netherlands\\
+	e.demirovic@tudelft.nl
+}
+\and
 \IEEEauthorblockN{Katsumi Inoue}
 \IEEEauthorblockA{
 \textit{National Institute of Informatics} \\
-\textit{The Graduate University for Advanced Studies}\\
+\textit{The Graduate University for Advanced Studies, SOKENDAI}\\
 Tokyo, Japan\\
-inoue@nii.ac.jp}
+inoue@nii.ac.jp
+}
 \and
 \IEEEauthorblockN{Jean-Marie Lagniez}
 \IEEEauthorblockA{
@@ -40,14 +56,6 @@ inoue@nii.ac.jp}
 \textit{CRIL-CNRS}\\
 Lens, France\\
 lagniez@cril.fr
-}
-\and
-\IEEEauthorblockN{Nicolas Schwind}
-\IEEEauthorblockA{
-\textit{National Institute of Advanced}\\ 
-\textit{Industrial Science and Technology} \\
-Tokyo, Japan \\
-nicolas-schwind@aist.go.jp
 }
 }
 
@@ -138,9 +146,8 @@ Formally, we have:
 Robustness generalizes efficiency: a team is $0$-robust iff it is efficient.
 %The generalization is strict, since higher values of $k$ lead to different optimal teams \cite{Okimoto2015}.
 Interestingly, despite this generalization, computing an optimal $k$-robust team (for any $k \geq 0$) does not lead to a computational shift.
-The decision problem for robustness asks, given a TF problem description and $c, k$ in $\mathbb{N}$,
-if there exists a $k$-robust team $T \subseteq A$ such that $f(T) \leq c$. 
-
+Indeed, the decision problem for robustness, which asks, given a TF problem description and $c, k$ in $\mathbb{N}$,
+if there exists a $k$-robust team $T \subseteq A$ such that $f(T) \leq c$, is $\mathsf{NP}$-complete.
 
 \section{Team Formation Problem: Facilities Deployment}
 
@@ -165,7 +172,7 @@ if there exists a $k$-robust team $T \subseteq A$ such that $f(T) \leq c$.
 
 
 In \cite{schwind2021}, we artificially generate instances modeling facility deployment problem instances.
-This problem which consist in deploying a set of facilities 
+This problem consists in deploying a set of facilities 
 (e.g., health centers, antennas, schools, shelters) on a populated map
 so as to maximize a certain population coverage while minimizing the overall deployment cost \cite{fac}.
 The problem is of particular importance, e.g., for mobile phone operators 
@@ -180,7 +187,7 @@ Each weighted TF problem instance was synthesized following three steps.
 
 
 
-First, one generates an elevation map made of river parts, lands and mountains. 
+First, one generates an elevation map made of water parts, lands and mountains. 
 A 16x16 grid of numbers is created using
 Perlin noise \cite{perlin}, a procedural texture primitive commonly used by visual 
 effects artists to increase the appearance of realism in
@@ -190,7 +197,7 @@ A low (resp., mid, high) value is interpreted as a water cell (resp., a mountain
 
 Second, the map is populated by iteratively adding an individual on the grid. 
 Initially, three individuals are added in three different land cells randomly chosen,
-provided that the cell is next to a river. Then, a new individual is added at 
+provided that the cell is next to a water cell. Then, a new individual is added at 
 random following a probability distribution.
 The water cells and the cells that already host 10 individuals cannot host a new individual.
 Among the remaining cells, the closer to an already populated cell or to river cell, 
