@@ -26,7 +26,8 @@
     
 \begin{document}
 
-\title{SAT Encoding for the Robust Team Formation Problem}
+%\title{SAT Encoding for the Robust Team Formation Problem}
+\title{SAT Benchmarks for the Robust Team Formation Problem}
 
 \author{
 	\IEEEauthorblockN{Nicolas Schwind}
@@ -68,14 +69,16 @@
 Team formation (TF) is the problem of deploying the least expensive team of agents 
 while covering a set of skills. It is almost equivalent to the Set Cover problem.
 Robust team formation (RobTF), a generalization of TF,
-takes into account the dynamic nature of the environment, e.g., after 
+takes into account the dynamic nature of the environment. Indeed, after 
 a team has been formed, agents may unexpectedly become unavailable
 due to failure or illness.
-A team is said to be $k$-robust if the team remains efficient even after $k$ agents are removed from it.
-Thus it is equivalent to TF for $k=0$.
+A team is said to be $k$-robust if it still covers the set of skills even after $k$ agents are removed from it.
+%Thus it is equivalent to TF for $k=0$.
 Robustness is clearly a desirable property as it allows the underlying system to remain 
 functional after an unfortunate event occurs.
-Interestingly, the decision problem for RobTF is $\mathsf{NP}$-complete for any integer $k$,
+The decision problem for RobTF consists, given two integers $k, b$, in finding a $k$-robust team whose deployment cost is not greater than
+$b$. Interestingly, this problem is $\mathsf{NP}$-complete,
+%for any integer $k$,
 making it an appropriate target for SAT solvers.
 \end{abstract}
 
@@ -118,18 +121,23 @@ problem asks, given a TF problem description and a
 bound $b \in \mathbb{N}$ as input, whether there exists an
 efficient team $T$ such that $f(T) \leq b$.  This problem is
 equivalent to the well-known set cover problem
-\cite{DBLP:books/fm/GareyJ79} and is $\mathsf{NP}$-complete. \\
+\cite{DBLP:books/fm/GareyJ79} and is $\mathsf{NP}$-complete \cite{Okimoto2015}. \\
 
 
 In realistic settings, we may not be certain about the actual functionality of 
-all agents from a team after computation and deployment.
+all agents from a team after
+%computation and
+deployment.
 Some unexpected, exogenous events often occur:
-agents get sick or may be unable to do the job for various reasons.
-Yet we may mot be certain about the actual functionality of all agents from a team 
-after formation and deployment. Thus it is important to consider robustness properties in TF, 
-i.e., seek to form an efficient team that is proactive to changes, i.e., it remains efficient 
-even when some agents are removed from the deployed team.
+agents get sick or may be unable to do the job for various reasons,
+and we may mot be certain about the actual functionality of all agents from a team 
+after
+%formation and
+deployment. Thus it is important to consider \emph{robustness} properties in TF,
+i.e., seek to form an efficient team that is proactive to such unfortunate changes.
 
+%, i.e., it remains efficient 
+%even when some agents are removed from the deployed team.
 The notion of robustness in Team Formation has been introduced and formalized in \cite{Okimoto2015}:
 \begin{definition}[Robust Team \cite{Okimoto2015}]
 	Given a TF problem description $\langle A, S, f, \alpha\rangle$ and  $k \in \mathbb{N}$, a team $T$
@@ -180,13 +188,13 @@ The notion of robustness in Team Formation has been introduced and formalized in
 		\centering
 		\includegraphics[width=\textwidth]{tf-j}
 	\end{minipage}
+	\caption{Some examples of populated maps.}
 	\label{fig:mapsss}
-	\caption{Some examples of map instances.}
 \end{figure*}
 
 Indeed, a team $T$ is $k$-robust if it remains efficient in any
 case where at most $k$ agents are removed from it.
-Robust TF consists in finding an optimal $k$-robust team, i.e., a
+Robust TF (RobTF) consists in finding an optimal $k$-robust team, i.e., a
 $k$-robust team of minimal deployment cost. It provides a
 guarantee that the goal is fulfilled in the worst case given $k$.
 Robustness generalizes efficiency: a team is $0$-robust if and only if it is efficient.
@@ -199,7 +207,7 @@ check that every skill is covered at least $k + 1$ times \cite{Okimoto2015}, and
 %Formally, we have:
 %The generalization is strict, since higher values of $k$ lead to different optimal teams \cite{Okimoto2015}.
 Hence, despite this generalization, finding an optimal $k$-robust team (for any $k \geq 0$) does not lead to a computational shift
-compared to finding an optimal efficient team. Let us formalize the decision problem for robust TF, which is the problem of interest here:
+compared to finding an optimal efficient team. Let us formalize the decision problem for RobTF, which is the problem of interest here:
 \begin{definition}[\dprobtf]\hfill
 	\begin{itemize}
 		\item[$\bullet$] \textbf{Input:} A TF problem description, two integers $k, b$.
@@ -235,7 +243,7 @@ compared to finding an optimal efficient team. Let us formalize the decision pro
 		\label{subfig:map-solutionKTF}
 		\includegraphics[width=\widthmap\textwidth]{TF-1-KTF-k1}
 	}
-	\caption{Optimal teams for different robustness degrees.}
+	\caption{Optimal 0-robust and 1-robust teams for a given instance.}
 	\label{fig:map-solution}
 \end{figure*}
 
@@ -252,8 +260,10 @@ The problem is of particular importance, e.g., for mobile phone operators
 which aim to deploy a set of cell towers in an urban environment.
 Finding an optimal efficient team allows one to find a facility deployment
 of minimal cost while providing a service coverage over
-the whole population. In such an application context, facilities correspond to agents
-and each populated cell corresponds to a skill.
+the whole population.
+In such an application context, each populated cell corresponds to a skill to be covered,
+each facility at a given location corresponds to an agent,
+and the skills associated with a facility are the populated cells in its range.
 %\footnote{In these instances, the skill is associated with a ``weight'' which
 %corresponds to the density of the population at that location \cite{schwind2021}. However, that weight is not relevant for the problem
 %considered here, so it is .}
@@ -273,12 +283,12 @@ Initially, three individuals are added in three different land cells randomly ch
 provided that the cell is next to a water cell. Then, a new individual is added at 
 random following a probability distribution.
 The water cells and the cells that already host 10 individuals cannot host a new individual.
-Among the remaining cells, the closer to a densely populated cell or to river cell,
+Among the remaining cells, the closer to a densely populated cell or to water cell,
 the higher its probability to welcome a new individual.
 The process is repeated 600 times which at last corresponds to the total 
 population in the map.
 %Fig.~\ref{subfig:map-alone} represents a populated map
-Fig.~\ref{fig:mapsss} represent ten populated maps
+Fig.~\ref{fig:mapsss} depicts ten populated maps
 generated using
 this method: blue (resp. white, brown) cells are of water type (resp. mountain, field type).
 The scales of brown correspond to different elevation degrees of land.
@@ -298,7 +308,7 @@ Each type $type_i$ of agent corresponds to a facility that has a deployment cost
 equal to $i$ and a cover range equal to $i - 1$. For instance, a cell tower 
 of type $type_3$ has a deployment cost equal to $3$, and when it is
 deployed in a certain cell $C$ on the grid, it provides the required service 
-to anyone that is in a cell $C'$ such that the distance between
+to anyone that is in a cell $C'$ where the distance between
 $C$ and $C'$ is at most $2$; the distance between two cells on the grid corresponds 
 to the length of the shortest path
 between $C$ and $C'$. So for each type of facility $type_i$ and each grid cell $j$ that is not of water type,
@@ -306,7 +316,7 @@ one considers an agent $a_i^j$ of cost $f(a_i^j) = i$ which corresponds to a
 facility of type $type_i$ to be potentially deployed in the cell $j$.
 This defines the set $A$ of agents and the cost function $f$.
 To define the set of skills $S$,
-one simply associate each populated grid cell $p$ 
+one simply associates each populated grid cell $p$ 
 (i.e., a cell that hosts at least one individual) with a skill $s_p$.
 %and the skill weight function $w_\Sigma$ 
 %(note that we considered a normalized weighted sum function)
@@ -315,7 +325,7 @@ one simply associate each populated grid cell $p$
 %of each skill $w_\Sigma(s_p)$ is defined as the number of individuals in the grid cell $p$.
 Lastly, the agent-to-skill mapping $\alpha$ is defined as follows. An agent $a_i^j$ 
 has the skill $s_p$ if the grid cell $p$ is within the reach of the facility $a_i^j$, 
-i.e., if the distance between the grid cells $j$ and $p$ is less or equal to $i - 1$.
+i.e., if the distance between the grid cells $j$ and $p$ is less than or equal to $i - 1$.
 The generated instances were formed of 500 to 700 agents and 50 to 150 skills.
 
 
@@ -343,39 +353,42 @@ as a SAT problem.
 %The objective is then to find out a team such that its computed cost is less than $b$.
 %To translate our problem into SAT
 To do so, we first associate a boolean 
-variable $p_i$ for each agent in $a_i \in A$, where $p_i$ is true
+variable $p_i$ with each agent in $a_i \in A$, where $p_i$ is true
 if and only if the agent $a_i$ is present in the deployed team.
-In the following we describe the encoding for the $k$-robust case, the efficient
-case beeing the special case where $k=0$.
-
-Given a TF instance $\langle A, S, f, \alpha\rangle$ and $k, b \in \mathbb{N}$, 
-a $k$ robust team $T$ exists if and only if:
+%In the following we describe the encoding for the $k$-robust case, the efficient
+%case beeing the special case where $k=0$.
+The encoding is described as follows.
+Given a TF instance $\langle A, S, f, \alpha\rangle$ and $k, b \in \mathbb{N}$,
+a $k$-robust team $T$ exists if and only if:
 \begin{equation}
-\bigwedge_{s \in S} \sum_{i \in A | s \in \alpha(i)} p_i > k
+\bigwedge_{s_j \in S} \sum_{a_i \in A | s_j \in \alpha(i)} p_i > k
 \end{equation}
 
 \begin{equation}
-\sum_{i \in A} f(i) \times p_i \leq b
+\sum_{a_i \in A} f(i) \times p_i \leq b
 \end{equation}
 
-Equation~1 ensures that the team is $k$-robust, i.e., that at least $k + 1$ agents present in the deployed team.
+Equation~1 ensures that at least $k + 1$ agents present in the deployed team the team.
+This equation precisely ensures that the team is $k$-robust \cite{Okimoto2015}.
+%i.e., that at least $k + 1$ agents present in the deployed team.
 It consists in a set of cardinality constraints encoded into CNF using PySAT \cite{imms-sat18}.
 In the case where $k = 0$, the cardinality constraints are encoded as clauses. 
 For the general case where $k > 0$ the cardinality constraints are encoded into SAT using
 the totalize encoding \cite{BailleuxB03}.
-Equation~2 ensures that the cost of the deployed team is kept below the bound $b$.
+Equation~2 ensures that the cost of the deployed team is not more than the bound $b$.
 It consists in one pseudo-boolean constraint
 that has been encoded into SAT using the encoding type \textit{best} provided by PySAT.
 
 \section{Benchmarks}
 
-We submitted X benchmarks to the 2021 SAT Competition.
+We submitted 20 benchmarks to the 2021 SAT Competition.
 The benchmarks are named as $ktf\_\langle bench.tf \rangle \_\langle k \rangle\_\langle ratio \rangle\_\langle b\rangle$, where:
 \begin{itemize}
 	\item $bench.tf$ is the TF instance used to generate the CNF formula,
-	\item $k$ is the $k$-robustness requirement,
-	\item $ratio$ is a ratio of the maximum overall cost, used to define the bound $b$,
-	\item $b$ is the bound defined by $b = ratio \times \sum_{a_i \in A} f(a_i)$.
+	\item $k$ is requirement of $k$-robustness,
+	\item $ratio$ is a ratio (a value between 0 and 1) of the overall cost the set of all agents, used to define the bound $b$; for instance,
+	one sets a ratio of 0.6 when one wants the cost of the deployed team to be less than or equal to 60\% of the total cost of all agents.
+	\item $b$ is the bound defined as $b = ratio \times \sum_{a_i \in A} f(a_i)$.
 \end{itemize}
 
 
@@ -391,7 +404,7 @@ The benchmarks are named as $ktf\_\langle bench.tf \rangle \_\langle k \rangle\_
 %($bound = ratio \times \sum_{i \in A} f(i)$);
 %\end{itemize}
 
-All the material used to generate the benchmarks are available at \url{???}.
+All the materials used to generate the benchmarks are available at \url{???}.
 
 
 \bibliographystyle{IEEEtrans} 
