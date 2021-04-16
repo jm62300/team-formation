@@ -27,20 +27,15 @@ A.~Ahmadi{-}Javid, P.~Seyedi, and S.~S. Syam, ``A survey of healthcare facility
 
 \bibitem{BailleuxB03}
 O.~Bailleux and Y.~Boufkhad, ``Efficient {CNF} encoding of boolean cardinality
-  constraints,'' in \emph{Principles and Practice of Constraint Programming -
-  {CP} 2003, 9th International Conference, {CP} 2003, Kinsale, Ireland,
-  September 29 - October 3, 2003, Proceedings}, ser. Lecture Notes in Computer
-  Science, F.~Rossi, Ed., vol. 2833.\hskip 1em plus 0.5em minus 0.4em\relax
-  Springer, 2003, pp. 108--122.
+  constraints,'' in \emph{Proceedings of the 9th International Conference on
+  Principles and Practice of Constraint Programming (CP'03)}, F.~Rossi, Ed.,
+  2003, pp. 108--122.
 
 \bibitem{FarhadiHHH12}
 F.~Farhadi, E.~Hoseini, S.~Hashemi, and A.~Hamzeh, ``Teamfinder: {A}
   co-clustering based framework for finding an effective team of experts in
   social networks,'' in \emph{12th {IEEE} International Conference on Data
-  Mining Workshops, {ICDM} Workshops, Brussels, Belgium, December 10, 2012},
-  J.~Vreeken, C.~Ling, M.~J. Zaki, A.~Siebes, J.~X. Yu, B.~Goethals, G.~I.
-  Webb, and X.~Wu, Eds.\hskip 1em plus 0.5em minus 0.4em\relax {IEEE} Computer
-  Society, 2012, pp. 107--114.
+  Mining Workshops (ICDM'12)}, 2012, pp. 107--114.
 
 \bibitem{DBLP:books/fm/GareyJ79}
 M.~R. Garey and D.~S. Johnson, \emph{Computers and Intractability: {A} Guide to
@@ -49,22 +44,21 @@ M.~R. Garey and D.~S. Johnson, \emph{Computers and Intractability: {A} Guide to
 
 \bibitem{DBLP:conf/atal/GeorgePSS10}
 J.~M. George, J.~Pinto, P.~B. Sujit, and J.~B. Sousa, ``Multiple {UAV}
-  coalition formation strategies,'' in \emph{9th International Conference on
-  Autonomous Agents and Multiagent Systems {(AAMAS} 2010), Toronto, Canada, May
-  10-14, 2010, Volume 1-3}, W.~van~der Hoek, G.~A. Kaminka,
-  Y.~Lesp{\'{e}}rance, M.~Luck, and S.~Sen, Eds., pp. 1503--1504.
+  coalition formation strategies,'' in \emph{Proceedings of the 9th
+  International Conference on Autonomous Agents and Multiagent Systems
+  (AAMAS'10)}, 2010, pp. 1503--1504.
 
 \bibitem{imms-sat18}
 A.~Ignatiev, A.~Morgado, and J.~Marques{-}Silva, ``{PySAT:} {A} {Python}
-  toolkit for prototyping with {SAT} oracles,'' in \emph{SAT}, 2018, pp.
-  428--437.
+  toolkit for prototyping with {SAT} oracles,'' in \emph{Proceedings of the
+  21st International Conference on Theory and Applications of Satisfiability
+  Testing (SAT'18)}, 2018, pp. 428--437.
 
 \bibitem{KargarAZ12}
 M.~Kargar, A.~An, and M.~Zihayat, ``Efficient bi-objective team formation in
-  social networks,'' in \emph{Machine Learning and Knowledge Discovery in
-  Databases - European Conference, {ECML} {PKDD} 2012, Bristol, UK, September
-  24-28, 2012. Proceedings, Part {II}}, P.~A. Flach, T.~D. Bie, and
-  N.~Cristianini, Eds., 2012, pp. 483--498.
+  social networks,'' in \emph{Proceedings of the European Conference on Machine
+  Learning and Knowledge Discovery in Databases Part {II} (ECML-PKDD'12)},
+  2012, pp. 483--498.
 
 \bibitem{DBLP:journals/aim/KitanoT01}
 H.~Kitano and S.~Tadokoro, ``Robocup rescue: {A} grand challenge for multiagent
@@ -72,31 +66,26 @@ H.~Kitano and S.~Tadokoro, ``Robocup rescue: {A} grand challenge for multiagent
   2001.
 
 \bibitem{MatthewsRC12}
-\BIBentryALTinterwordspacing
 T.~Matthews, S.~D. Ramchurn, and G.~Chalkiadakis, ``Competing with humans at
   fantasy football: Team formation in large partially-observable domains,'' in
-  \emph{Proceedings of the Twenty-Sixth {AAAI} Conference on Artificial
-  Intelligence, July 22-26, 2012, Toronto, Ontario, Canada}, J.~Hoffmann and
-  B.~Selman, Eds.\hskip 1em plus 0.5em minus 0.4em\relax {AAAI} Press, 2012.
-  [Online]. Available:
-  \url{http://www.aaai.org/ocs/index.php/AAAI/AAAI12/paper/view/5088}
-\BIBentrySTDinterwordspacing
+  \emph{Proceedings of the 26th {AAAI} Conference on Artificial Intelligence
+  (AAAI'12)}, 2012, pp. 1394--1400.
 
 \bibitem{Okimoto2015}
 T.~Okimoto, N.~Schwind, M.~Clement, T.~Ribeiro, K.~Inoue, and P.~Marquis, ``How
   to form a task-oriented robust team,'' in \emph{Proceedings of the 2015
-  International Conference on Autonomous Agents and Multiagent Systems, {AAMAS}
-  2015, Istanbul, Turkey, May 4-8, 2015}, 2015, pp. 395--403.
+  International Conference on Autonomous Agents and Multiagent Systems
+  (AAMAS'15)}, 2015, pp. 395--403.
 
 \bibitem{perlin}
 K.~Perlin, ``An image synthesizer,'' in \emph{Proceedings of the 12th Annual
-  Conference on Computer Graphics and Interactive Techniques, {SIGGRAPH} 1985,
-  San Francisco, California, USA, July 22-26, 1985}, 1985, pp. 287--296.
+  Conference on Computer Graphics and Interactive Techniques (SIGGRAPH'85)},
+  1985, pp. 287--296.
 
 \bibitem{schwind2021}
 N.~Schwind, E.~Demirovi\'c, K.~Inoue, and J.-M. Lagniez, ``Partial robustness
   in team formation: Bridging the gap between robustness and resilience,'' in
   \emph{Proceedings of the 2021 International Conference on Autonomous Agents
-  and Multiagent Systems, {AAMAS} 2021, virtual, May 3-7, 2021}, 2021.
+  and Multiagent Systems (AAMAS'21)}, 2021, to appear.
 
 \end{thebibliography}
