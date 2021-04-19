@@ -1,6 +1,8 @@
 # How to use
 
-This document describes how to run the team formation translator.
+This document describes how to run the team formation translator, which was developed for the paper Partial Robustness in Team Formation: Bridging the Gap between Robustness and Resilience (Schwind, Demirović, Inoue, and Lagniez - AAMAS'21).
+
+
 The available **mode** are:
 * tf, classical team formation;
 * ktf, robust team formation (at least k agents should be able to realize each

@@ -1,4 +1,5 @@
-This archive contains:
+This archive contains instaces encoding partial robustness in team formation. See the following paper for more details: Partial Robustness in Team Formation: Bridging the Gap between Robustness and Resilience (Schwind, Demirović, Inoue, and Lagniez - AAMAS'21).
+
  - info.txt that report for each instance if it has been solved or not, if it has been solved the running time.
  - BENCH.cnf, 20 CNF instances classifed as follow:
    - 5 easy (<100s by CaDiCaL): ktf_TF-4.tf_2_0.02_18.cnf ktf_TF-5.tf_4_0.06_87.cnf ktf_TF-1.tf_4_0.06_101.cnf ktf_TF-7.tf_3_0.06_113.cnf ktf_TF-3.tf_3_0.02_24.cnf
