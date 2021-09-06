@@ -23,15 +23,17 @@ from ktf import *
 import sys
 import os
 
+
 def help():
-    print("USAGE: ./solve.py FILE [-tf] [-ktf] [-k=1] [-b=1]")
+    print("USAGE: ./encode.py FILE [-maxSAT] [-tf] [-ktf] [-k=1] [-b=1]")
     exit(1)
+
 
 if len(sys.argv) <= 1 or sys.argv[1] in ["-h", "-help"]:
     help()
 
 fileName = str(sys.argv[1])
-k, m, b = 1, "tf", 1
+k, m, b, maxSat = 1, "tf", 1, False
 
 # parse the options
 for o in sys.argv[2:]:
@@ -41,6 +43,8 @@ for o in sys.argv[2:]:
         k = int(o.split('=')[1])
     if o[:3] == "-b=":
         b = int(o.split('=')[1])
+    if o == "-maxSAT":
+        maxSat = True
 
 print("c Options:")
 print("c Method we run:", m)
@@ -58,6 +62,11 @@ print("c Number of integrity constraints:", len(eclauses))
 # apply the translation
 agentsProp, skillsProp = [], []
 if(m == "tf"):
-    solveTF(nbAgents, nbSkills, mapOfAgents, mapOfSkills, eclauses, b)
+    if maxSat:
+        tfToMaxSat(nbAgents, nbSkills, mapOfAgents,
+                   mapOfSkills, eclauses)
+    else:
+        tfToSatDecision(nbAgents, nbSkills, mapOfAgents,
+                        mapOfSkills, eclauses, b)
 elif(m == "ktf"):
     solvekTF(nbAgents, nbSkills, mapOfAgents, mapOfSkills, eclauses, k, b)
